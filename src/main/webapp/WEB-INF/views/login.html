@@ -2,23 +2,23 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Login to Dashboard</title>
+  <title th:text="#{login.title}"></title>
 </head>
 <body>
-<h1>Login to Dashboard</h1>
+<h1 th:text="#{login.heading}"></h1>
 <form th:action="@{/login}" th:object="${credential}" method="post">
   <table>
     <tr>
-      <td>Username:</td>
+      <td th:text="#{login.username_label}"></td>
       <td><input type="text" th:field="*{username}"/></td>
     </tr>
     <tr>
-      <td>Password:</td>
+      <td th:text="#{login.password_label}"></td>
       <td><input type="password" th:field="*{password}"/></td>
     </tr>
     <tr>
       <td></td>
-      <td><input type="submit" value="Login"></td>
+      <td><input type="submit" th:value="#{login.submit_label}"></td>
     </tr>
   </table>
 </form>
